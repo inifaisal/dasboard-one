@@ -1,3 +1,4 @@
+import { Container } from "@/components/container"
 import { MainNavbar } from "@/components/main-navbar"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Button } from "@/components/ui/button"
@@ -10,6 +11,7 @@ import {
 } from "@/components/ui/card"
 import { CalendarDateRangePicker } from "@/components/ui/date/date-picker"
 import { Input } from "@/components/ui/input"
+import Sidebar from "@/components/ui/sidebar/sidebar"
 import {
   Tabs,
   TabsContent,
@@ -20,25 +22,8 @@ import { UserNavDropdown } from "@/components/use-nav-dropdown"
 
 const Dashboard = () => {
   return (
-    <>
-      <div className="hidden flex-col md:flex">
-        <div className="border-b">
-          <div className="flex h-16 items-center px-4">
-            {/* <TeamSwitcher /> */}
-            <MainNavbar className="mx-6" />
-            <div className="ml-auto flex items-center space-x-4">
-              <div>
-                <Input
-                  type="search"
-                  placeholder="Search..."
-                  className="md:w-[100px] lg:w-[300px]"
-                />
-              </div>
-              <ModeToggle />
-              <UserNavDropdown />
-            </div>
-          </div>
-        </div>
+    <Container>
+       <div className="hidden flex-col md:flex">
         <div className="flex-1 space-y-4 p-8 pt-6">
           <div className="flex items-center justify-between space-y-2">
             <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
@@ -190,7 +175,7 @@ const Dashboard = () => {
           </Tabs>
         </div>
       </div>
-    </>
+    </Container>
   )
 }
 
